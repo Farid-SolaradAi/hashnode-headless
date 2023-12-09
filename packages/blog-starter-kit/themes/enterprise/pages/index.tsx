@@ -10,6 +10,7 @@ import { Button } from '../components/button';
 import { Container } from '../components/container';
 import { AppProvider } from '../components/contexts/appContext';
 import { Footer } from '../components/footer';
+import SolaradFooter from '../components/solarad-footer';
 import { Header } from '../components/header';
 import { HeroPost } from '../components/hero-post';
 import { ArticleSVG, ChevronDownSVG } from '../components/icons';
@@ -182,7 +183,8 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 						</>
 					)}
 				</Container>
-				<Footer />
+				{/* <Footer /> */}
+				<SolaradFooter />
 			</Layout>
 		</AppProvider>
 	);
