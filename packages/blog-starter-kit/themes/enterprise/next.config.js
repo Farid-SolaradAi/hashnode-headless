@@ -73,17 +73,21 @@ const config = {
 		],
 	},
 	async rewrites() {
-		return [
-		  {
-			source: "/blog",
-			destination: "https://hashnode-headless-swart.vercel.app/blog",
-		  },
-		  {
-			source: "/blog/:path*",
-			destination: "https://hashnode-headless-swart.vercel.app/blog/:path*",
-		  },
-		];
-	  },
+        return [
+            {
+                source: '/ping/data-event',
+                destination: `${ANALYTICS_BASE_URL}/api/data-event`,
+            },
+            {
+                source: '/ping/view',
+                destination: `${ANALYTICS_BASE_URL}/api/view`,
+            },
+            {
+                source: '/api/collect',
+                destination: `${ADVANCED_ANALYTICS_BASE_URL}/api/collect`,
+            },
+        ];
+    },
 	async redirects() {
 		return await getRedirectionRules();
 	},
