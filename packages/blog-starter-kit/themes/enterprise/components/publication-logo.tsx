@@ -36,7 +36,7 @@ export const PublicationLogo = ({ isSidebar }: { isSidebar?: boolean }) => {
 							isSidebar ? 'text-black dark:text-white' : 'text-white md:text-4xl'
 						}`}
 					>
-						Solarad AI's Blog
+						{"Solarad AI's Blog"}
 					</span>
 				)}
 			</Link>
