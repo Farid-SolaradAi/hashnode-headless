@@ -11,6 +11,8 @@ import { Container } from '../components/container';
 import { AppProvider } from '../components/contexts/appContext';
 import { Footer } from '../components/footer';
 import SolaradFooter from '../components/solarad-footer';
+import SolaradNavbar from '../components/solarad-navbar';
+import CallToAction from '../components/call-to-action';
 import { Header } from '../components/header';
 import { HeroPost } from '../components/hero-post';
 import { ArticleSVG, ChevronDownSVG } from '../components/icons';
@@ -87,23 +89,24 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 			<Layout>
 				<Head>
 					<title>
-						{publication.displayTitle || publication.title || 'Hashnode Blog Starter Kit'}
+						{publication.displayTitle || "Solarad AI - Forecast For Solar Energy" || 'Hashnode Blog Starter Kit'}
 					</title>
 					<meta
 						name="description"
 						content={
-							publication.descriptionSEO || publication.title || `${publication.author.name}'s Blog`
+							publication.descriptionSEO || "Solarad AI - Forecast For Solar Energy" || `${publication.author.name}'s Blog`
 						}
 					/>
+					
 					<meta property="twitter:card" content="summary_large_image" />
 					<meta
 						property="twitter:title"
-						content={publication.displayTitle || publication.title || 'Hashnode Blog Starter Kit'}
+						content={publication.displayTitle || "Solarad AI - Forecast For Solar Energy" || 'Hashnode Blog Starter Kit'}
 					/>
 					<meta
 						property="twitter:description"
 						content={
-							publication.descriptionSEO || publication.title || `${publication.author.name}'s Blog`
+							publication.descriptionSEO || "Solarad AI - Forecast For Solar Energy" || `${publication.author.name}'s Blog`
 						}
 					/>
 					<meta
@@ -120,10 +123,13 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 							__html: JSON.stringify(addPublicationJsonLd(publication)),
 						}}
 					/>
+					<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet"></link>
 				</Head>
-				<Header />
+					<SolaradNavbar />
+				{/* <Header /> */}
 				<Container className="flex flex-col items-stretch gap-10 px-5 pb-10">
-					<Navbar />
+				<Navbar />
+				
 
 					{allPosts.length === 0 && (
 						<div className="grid grid-cols-1 py-20 lg:grid-cols-3">
@@ -184,6 +190,7 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 					)}
 				</Container>
 				{/* <Footer /> */}
+				<CallToAction />
 				<SolaradFooter />
 			</Layout>
 		</AppProvider>

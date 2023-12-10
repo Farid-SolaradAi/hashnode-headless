@@ -5,7 +5,7 @@ import { PublicationFragment } from '../generated/graphql';
 
 const getPublicationLogo = (publication: PublicationFragment, isSidebar?: boolean) => {
 	if (isSidebar) {
-		return publication.preferences.logo; // Always display light mode logo in sidebar
+		return publication.preferences.logo;
 	}
 	return publication.preferences.darkMode?.logo || publication.preferences.logo;
 }
@@ -36,7 +36,7 @@ export const PublicationLogo = ({ isSidebar }: { isSidebar?: boolean }) => {
 							isSidebar ? 'text-black dark:text-white' : 'text-white md:text-4xl'
 						}`}
 					>
-						{publication.title}
+						Solarad AI's Blog
 					</span>
 				)}
 			</Link>
