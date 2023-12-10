@@ -54,7 +54,7 @@ const SolaradNavbar: React.FC = () => {
                     {isResourcesDropdownOpen && (
                         <div className="absolute py-2 pt-2 w-48 rounded-md shadow-lg">
                             <div className="px-4 py-1 text-sm bg-white box-border rounded-t-md"></div>
-                            <Link href="https://solarad.ai/blog" legacyBehavior>
+                            <Link href="https://blog.solarad.ai" legacyBehavior>
                                 <a className="block px-4 py-2 text-sm text-gray-700 bg-white hover:bg-gray-100">Blog</a>
                             </Link>
                             <Link href="https://solarad.notion.site/c13f74cd948f4531b1b19de3a736f97c?v=e82f893a2d6647958dbe815bd2583d19" legacyBehavior>
