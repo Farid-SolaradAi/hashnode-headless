@@ -23,16 +23,16 @@ const SolaradNavbar: React.FC = () => {
                 <div className="relative" onMouseEnter={toggleProductsDropdown} onMouseLeave={toggleProductsDropdown}>
                         <span className="text-white hover:text-gray-400 transition-colors">Products</span>
                     {isProductsDropdownOpen && (
-                        <div className="absolute py-2 pt-2 w-48 rounded-md shadow-lg">
+                        <div className="absolute pt-2 w-48 rounded-md shadow-lg top-full">
                             <div className="px-4 py-1 text-sm bg-white box-border rounded-t-md"></div>
                             <Link href="https://solarad.ai/forecast" legacyBehavior>
-                                <a className="block px-4 py-2 text-sm text-gray-700 bg-white hover:bg-gray-100">Forecast</a>
+                                <a className="block px-4 py-3 text-sm text-gray-700 bg-white hover:bg-gray-100">Forecast</a>
                             </Link>
                             <Link href="https://solarad.ai/coming-soon" legacyBehavior>
-                                <a className="block px-4 py-2 text-sm text-gray-700 bg-white hover:bg-gray-100">Weather Intelligence Platform</a>
+                                <a className="block px-4 py-3 text-sm text-gray-700 bg-white hover:bg-gray-100">Weather Intelligence Platform</a>
                             </Link>
                             <Link href="https://solarad.ai/coming-soon" legacyBehavior>
-                                <a className="block px-4 py-2 text-sm text-gray-700 bg-white hover:bg-gray-100">Weather APIs for Solar</a>
+                                <a className="block px-4 py-3 text-sm text-gray-700 bg-white hover:bg-gray-100 rounded-b-md">Weather APIs for Solar</a>
                             </Link>
                         </div>
                     )}
@@ -52,16 +52,16 @@ const SolaradNavbar: React.FC = () => {
                         <a className="text-white hover:text-gray-400 transition-colors">Resources</a>
                     </Link>
                     {isResourcesDropdownOpen && (
-                        <div className="absolute py-2 pt-2 w-48 rounded-md shadow-lg">
+                        <div className="absolute pt-2 w-48 rounded-md shadow-lg flex flex-col justify-end">
                             <div className="px-4 py-1 text-sm bg-white box-border rounded-t-md"></div>
                             <Link href="https://blog.solarad.ai" legacyBehavior>
-                                <a className="block px-4 py-2 text-sm text-gray-700 bg-white hover:bg-gray-100">Blog</a>
+                                <a className="block px-4 py-3 text-sm text-gray-700 bg-white hover:bg-gray-100">Blog</a>
                             </Link>
                             <Link href="https://solarad.notion.site/c13f74cd948f4531b1b19de3a736f97c?v=e82f893a2d6647958dbe815bd2583d19" legacyBehavior>
-                                <a className="block px-4 py-2 text-sm text-gray-700 bg-white hover:bg-gray-100">Newsletter</a>
+                                <a className="block px-4 py-3 text-sm text-gray-700 bg-white hover:bg-gray-100">Newsletter</a>
                             </Link>
                             <Link href="https://solarad.ai/resource-map" legacyBehavior>
-                                <a className="block px-4 py-2 text-sm text-gray-700 bg-white hover:bg-gray-100">Resource Map</a>
+                                <a className="block px-4 py-3 text-sm text-gray-700 bg-white hover:bg-gray-100 rounded-b-md">Resource Map</a>
                             </Link>
                         </div>
                     )}
