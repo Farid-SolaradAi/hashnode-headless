@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { DEFAULT_COVER } from '../utils/const';
 import { CoverImage } from './cover-image';
 import { DateFormatter } from './date-formatter';
+import SolaradNavbar from './solarad-navbar';
 
 type Props = {
 	title: string;

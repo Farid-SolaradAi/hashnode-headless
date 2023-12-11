@@ -12,6 +12,9 @@ import { Footer } from '../components/footer';
 import { Header } from '../components/header';
 import { Layout } from '../components/layout';
 import { MarkdownToHtml } from '../components/markdown-to-html';
+import SolaradFooter from '../components/solarad-footer';
+import SolaradNavbar from '../components/solarad-navbar';
+import CallToAction from '../components/call-to-action';
 import { PostHeader } from '../components/post-header';
 import { PostTOC } from '../components/post-toc';
 import {
@@ -43,15 +46,15 @@ const PostComments = dynamic(() =>
 
 type Props =
 	| {
-			post: PostFullFragment;
-			page: null;
-			publication: PublicationFragment;
-	  }
+		post: PostFullFragment;
+		page: null;
+		publication: PublicationFragment;
+	}
 	| {
-			post: null;
-			page: StaticPageFragment;
-			publication: PublicationFragment;
-	  };
+		post: null;
+		page: StaticPageFragment;
+		publication: PublicationFragment;
+	};
 
 const Post = (publication: PublicationFragment, post: PostFullFragment) => {
 	const highlightJsMonokaiTheme =
@@ -72,25 +75,25 @@ const Post = (publication: PublicationFragment, post: PostFullFragment) => {
 	useEmbeds({ enabled: canLoadEmbeds });
 	if (post.hasLatexInPost) {
 		setTimeout(() => {
-		  handleMathJax(true);
+			handleMathJax(true);
 		}, 500);
 	}
 
 	useEffect(() => {
 		if (screen.width <= 425) {
-		  setMobMount(true);
+			setMobMount(true);
 		}
-	
+
 		if (!post) {
-		  return;
+			return;
 		}
-	
+
 		// TODO:
 		// More of an alert, did this below to wrap async funcs inside useEffect
 		(async () => {
-		  await loadIframeResizer();
-		  triggerCustomWidgetEmbed(post.publication?.id.toString());
-		  setCanLoadEmbeds(true);
+			await loadIframeResizer();
+			triggerCustomWidgetEmbed(post.publication?.id.toString());
+			setCanLoadEmbeds(true);
 		})();
 	}, []);
 
@@ -129,6 +132,7 @@ const Post = (publication: PublicationFragment, post: PostFullFragment) => {
 					}}
 				/>
 				<style dangerouslySetInnerHTML={{ __html: highlightJsMonokaiTheme }}></style>
+
 			</Head>
 			<PostHeader
 				title={post.title}
@@ -170,13 +174,16 @@ export default function PostOrPage({ publication, post, page }: Props) {
 	return (
 		<AppProvider publication={publication} post={post}>
 			<Layout>
-				<Header />
+				<SolaradNavbar />
+				{/* <Header /> */}
 				<Container className="pt-10">
 					<article className="flex flex-col items-start gap-10 pb-10">
 						{post ? Post(publication, post) : Page(page)}
 					</article>
 				</Container>
-				<Footer />
+				{/* <Footer /> */}
+				<CallToAction />
+				<SolaradFooter />
 			</Layout>
 		</AppProvider>
 	);

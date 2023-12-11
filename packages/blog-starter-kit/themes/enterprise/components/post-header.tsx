@@ -5,6 +5,7 @@ import { CoverImage } from './cover-image';
 import { DateFormatter } from './date-formatter';
 import { ReadTimeInMinutes } from './post-read-time-in-minutes';
 import { PostTitle } from './post-title';
+import SolaradNavbar from './solarad-navbar';
 
 type Author = Pick<User, 'username' | 'name' | 'profilePicture'>;
 
@@ -19,6 +20,7 @@ type Props = {
 export const PostHeader = ({ title, coverImage, date, author, readTimeInMinutes }: Props) => {
 	return (
 		<>
+			{/* <SolaradNavbar /> */}
 			<PostTitle>{title}</PostTitle>
 			<div className="flex flex-row flex-wrap items-center justify-center w-full gap-2 px-2 text-slate-700 dark:text-neutral-300 md:px-0">
 				<Avatar

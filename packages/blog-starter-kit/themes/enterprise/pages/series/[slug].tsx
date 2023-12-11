@@ -18,6 +18,8 @@ import {
 	SeriesPostsByPublicationQueryVariables,
 } from '../../generated/graphql';
 import { DEFAULT_COVER } from '../../utils/const';
+import SolaradFooter from '../../components/solarad-footer';
+import SolaradNavbar from '../../components/solarad-navbar';
 
 type Props = {
 	series: SeriesFragment;
