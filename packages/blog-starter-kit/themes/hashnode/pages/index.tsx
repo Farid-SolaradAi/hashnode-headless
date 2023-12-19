@@ -28,6 +28,8 @@ import { resizeImage } from '../utils/image';
 import SolaradNavbar from '../components/solarad-navbar';
 import SolaradFooter from '../components/solarad-footer';
 import CallToAction from '../components/call-to-action';
+import { ScrollArea } from '@radix-ui/react-scroll-area';
+import PublicationSubscribeStandOut from '../components/publication-subscribe-standout';
 
 const REVALIDATION_INTERVAL_POST_VIEWS_ACTIVE = 60 * 60; // 1 hour
 const REVALIDATION_INTERVAL = 60 * 60 * 24 * 30; // 1 month
@@ -96,6 +98,7 @@ export default function Index(
 		<AppProvider publication={publication}>
 			<Layout>
 				<Head>
+					{/* <SolaradNavbar /> */}
 					<title>
 						{publication.displayTitle || publication.title || 'Hashnode Blog Starter Kit'}
 					</title>
@@ -195,6 +198,7 @@ export default function Index(
 						darkMode={publication.preferences.darkMode}
 					/>
 				) : null} */}
+				<PublicationSubscribeStandOut />
 				<CallToAction />
 				<SolaradFooter />
 			</Layout>

@@ -106,7 +106,7 @@ const SolaradNavbar: React.FC = () => {
                 <div className="relative" onMouseEnter={toggleProductsDropdown} onMouseLeave={toggleProductsDropdown}>
                     <a className="relative text-white hover:text-gray-400 transition-colors hover:cursor-pointer">Products</a>
                     {isProductsDropdownOpen && (
-                        <div className="absolute bottom-0 right-9 transform translate-y-full mt-2 w-48">
+                        <div className="absolute bottom-0 left-0 transform translate-y-full mt-2 w-48">
                             <div className="px-4 py-1 text-sm bg-white box-border rounded-t-md"></div>
                             <Link href="https://solarad.ai/forecast" legacyBehavior>
                                 <a className="block px-4 py-3 text-sm text-gray-700 bg-white hover:bg-gray-100">Forecast</a>
@@ -134,12 +134,12 @@ const SolaradNavbar: React.FC = () => {
                 <div className="relative" onMouseEnter={toggleResourcesDropdown} onMouseLeave={toggleResourcesDropdown}>
                     <a className="text-white hover:text-gray-400 transition-colors hover:cursor-pointer">Resources</a>
                     {isResourcesDropdownOpen && (
-                        <div className="absolute pt-2 w-48 right-0 top-5">
+                        <div className="absolute pt-2 w-48 left-0 top-5">
                             <div className="px-4 py-1 text-sm bg-white box-border rounded-t-md"></div>
                             <Link href="https://blog.solarad.ai" legacyBehavior>
                                 <a className="block px-4 py-3 text-sm text-gray-700 bg-white hover:bg-gray-100">Blog</a>
                             </Link>
-                            <Link href="https://blog.solarad.ai" legacyBehavior>
+                            <Link href="https://blog.solarad.ai/newsletter" legacyBehavior>
                                 <a className="block px-4 py-3 text-sm text-gray-700 bg-white hover:bg-gray-100">Newsletter</a>
                             </Link>
                             <Link href="https://solarad.ai/resource-map" legacyBehavior>

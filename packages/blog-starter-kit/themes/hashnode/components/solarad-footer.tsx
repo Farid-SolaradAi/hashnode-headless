@@ -79,7 +79,7 @@ const SolaradFooter: React.FC = () => {
             © {currentYear} <Link href="https://solarad.ai" passHref><span className='text-[#fcba03] cursor-pointer font-raleway'>Solarad.ai</span></Link> All rights reserved.
           </div>
           <div className="flex space-x-4">
-            <Link href="https://solarad.notion.site/c13f74cd948f4531b1b19de3a736f97c?v=e82f893a2d6647958dbe815bd2583d19&pvs=4" passHref><span className="text-gray-400 hover:text-white cursor-pointer font-raleway">Newsletter</span></Link>
+            <Link href="https://blog.solarad.ai/newsletter" passHref><span className="text-gray-400 hover:text-white cursor-pointer font-raleway">Newsletter</span></Link>
             <Link href="https://solarad.notion.site/Solarad-ai-Privacy-Policy-126dbf342df7418aac0f3c0313279def?pvs=4" passHref><span className="text-gray-400 hover:text-white cursor-pointer font-raleway">Privacy Policy</span></Link>
           </div>
         </div>

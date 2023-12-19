@@ -16,6 +16,9 @@ import { log as _log } from 'next-axiom';
 import { initUrqlClient } from 'next-urql';
 import { Header } from '../components/header';
 import PublicationFooter from '../components/publication-footer';
+import CallToAction from '../components/call-to-action';
+import SolaradFooter from '../components/solarad-footer';
+import SolaradNavbar from '../components/solarad-navbar';
 
 type Props = {
   publication: PublicationFragment;
@@ -40,7 +43,8 @@ const Newsletter = (props: Props) => {
 
   return (
     <AppProvider publication={publication}>
-      <Header currentMenuId={currentMenuId} isHome={false}/>
+      <SolaradNavbar />
+      <Header currentMenuId={currentMenuId} isHome={false} />
       <div className="blog-page-area mx-auto min-h-screen px-4 pb-8 pt-20 md:px-10 md:pt-20">
         <div className="blog-page-card container relative z-30 mx-auto grid grid-flow-row grid-cols-8 pb-0 2xl:grid-cols-10">
           <div className="col-span-full">
@@ -73,16 +77,20 @@ const Newsletter = (props: Props) => {
         )}
       </div>
       {publication ? (
-				<PublicationFooter
-					authorName={publication.author.name}
-					title={publication.title}
-					imprint={publication.imprint}
-					disableFooterBranding={publication.preferences.disableFooterBranding}
-					isTeam={publication.isTeam}
-					logo={publication.preferences.logo}
-					darkMode={publication.preferences.darkMode}
-				/>
-				) : null}
+        // <PublicationFooter
+        // 	authorName={publication.author.name}
+        // 	title={publication.title}
+        // 	imprint={publication.imprint}
+        // 	disableFooterBranding={publication.preferences.disableFooterBranding}
+        // 	isTeam={publication.isTeam}
+        // 	logo={publication.preferences.logo}
+        // 	darkMode={publication.preferences.darkMode}
+        // />
+        <>
+          <CallToAction />
+          <SolaradFooter />
+        </>
+      ) : null}
     </AppProvider>
   );
 };

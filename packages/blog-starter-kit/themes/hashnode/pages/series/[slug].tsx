@@ -16,6 +16,10 @@ import { useState } from 'react';
 import { WithUrqlProps, initUrqlClient } from 'next-urql';
 import { createHeaders, createSSRExchange, getUrqlClientConfig } from '../../lib/api/client';
 import PublicationFooter from '../../components/publication-footer';
+import SolaradNavbar from '../../components/solarad-navbar';
+import SolaradFooter from '../../components/solarad-footer';
+import CallToAction from '../../components/call-to-action';
+import PublicationSubscribeStandOut from '../../components/publication-subscribe-standout';
 
 type Props = GetServerSideProps &
   Required<WithUrqlProps> & {
@@ -55,6 +59,7 @@ export default function Series({ series, publication, posts, seriesSlug, current
 		<AppProvider publication={publication}>
 			<Layout>
 				<Head>
+				<SolaradNavbar />
 					<title>{title}</title>
 				</Head>
 				<Header currentMenuId={currentMenuId} isHome={false}/>
@@ -128,7 +133,7 @@ export default function Series({ series, publication, posts, seriesSlug, current
 						/>
 					</div>
 				</div>
-				<PublicationFooter
+				{/* <PublicationFooter
 					authorName={publication.author.name}
 					title={publication.title}
 					imprint={publication.imprint}
@@ -136,7 +141,10 @@ export default function Series({ series, publication, posts, seriesSlug, current
 					isTeam={publication.isTeam}
 					logo={publication.preferences.logo}
 					darkMode={publication.preferences.darkMode}
-				/>
+				/> */}
+				<PublicationSubscribeStandOut />
+				<CallToAction />
+				<SolaradFooter />
 			</Layout>
 		</AppProvider>
 	);

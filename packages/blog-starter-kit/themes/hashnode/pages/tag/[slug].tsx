@@ -17,6 +17,10 @@ import ExternalLinkSVG from '../../components/icons/svgs/ExternalLinkSVG';
 import { createHeaders, createSSRExchange, getUrqlClientConfig } from '../../lib/api/client';
 import PublicationPosts from '../../components/publication-posts';
 import PublicationFooter from '../../components/publication-footer';
+import CallToAction from '../../components/call-to-action';
+import SolaradFooter from '../../components/solarad-footer';
+import SolaradNavbar from '../../components/solarad-navbar';
+import PublicationSubscribeStandOut from '../../components/publication-subscribe-standout';
 
 const INITIAL_LIMIT = 6;
 
@@ -48,6 +52,7 @@ export default function Post({ publication, posts, tag, slug, currentMenuId }: P
 		<AppProvider publication={publication}>
 			<Layout>
 				<Head>
+					<SolaradNavbar />
 					<title>{title}</title>
 				</Head>
 				<Header currentMenuId={currentMenuId} isHome={false} />
@@ -103,7 +108,7 @@ export default function Post({ publication, posts, tag, slug, currentMenuId }: P
 						fetching={fetching}
 					/>{' '}
 				</div>
-				<PublicationFooter
+				{/* <PublicationFooter
 					authorName={publication.author.name}
 					title={publication.title}
 					imprint={publication.imprint}
@@ -111,7 +116,10 @@ export default function Post({ publication, posts, tag, slug, currentMenuId }: P
 					isTeam={publication.isTeam}
 					logo={publication.preferences.logo}
 					darkMode={publication.preferences.darkMode}
-				/>
+				/> */}
+				<PublicationSubscribeStandOut />
+				<CallToAction />
+				<SolaradFooter />
 			</Layout>
 		</AppProvider>
 	);

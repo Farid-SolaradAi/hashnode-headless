@@ -32,6 +32,8 @@ import Autolinker from "../../utils/autolinker";
 import DraftFloatingMenu from '../../components/draft-floating-menu';
 import { markdownToHtml } from '@starter-kit/utils/renderer/markdownToHtml';
 import TocRenderDesign from '../../components/toc-render-design';
+import CallToAction from '../../components/call-to-action';
+import SolaradFooter from '../../components/solarad-footer';
 
 type Props = {
 	draft: DraftFragment; // TODO: to be fixed
@@ -212,7 +214,7 @@ export default function Post({ publication, draft }: Props) {
 						</article>
 					</main>
 				</Container>
-				<PublicationFooter
+				{/* <PublicationFooter
 					authorName={publication.author.name}
 					title={publication.title}
 					imprint={publication.imprint}
@@ -220,7 +222,9 @@ export default function Post({ publication, draft }: Props) {
 					isTeam={publication.isTeam}
 					logo={publication.preferences.logo}
 					darkMode={publication.preferences.darkMode}
-				/>
+				/> */}
+				<CallToAction />
+				<SolaradFooter />
 			</Layout>
 		</AppProvider>
 	);
