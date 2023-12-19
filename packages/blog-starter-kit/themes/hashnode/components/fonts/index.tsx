@@ -13,14 +13,17 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 const variableConstant = 'variable';
-const fontInterVar = inter.variable.replace(variableConstant, 'Inter');
-const fontPlusJakartaSansVar = plusJakartaSans.variable.replace(variableConstant, 'Plus_Jakarta_Sans');
+// const fontInterVar = inter.variable.replace(variableConstant, 'Inter');
+// const fontPlusJakartaSansVar = plusJakartaSans.variable.replace(variableConstant, 'Plus_Jakarta_Sans');
 
 export const GlobalFontVariables = () => (
   <style jsx global>{`
     html {
-      --font-inter: ${fontInterVar};
-      --font-plus-jakarta-sans: ${fontPlusJakartaSansVar};
+
     }
   `}</style>
 );
+
+
+// --font-inter: ${fontInterVar};
+// --font-plus-jakarta-sans: ${fontPlusJakartaSansVar};

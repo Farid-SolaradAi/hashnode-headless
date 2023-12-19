@@ -69,8 +69,8 @@ function PublicationNavLinks(props: Props) {
               <span
                 className={twJoin(
                   'blog-nav-text',
-                  'mb-2 block rounded-lg px-2 py-1 ring-offset-2 transition-colors duration-150 group-focus:ring',
-                'text-slate-900 hover:bg-slate-100 group-focus:ring-blue-600 group-focus:ring-offset-white dark:text-white dark:hover:bg-slate-800 dark:group-focus:ring-offset-slate-800',
+                  'mb-2 block rounded-lg px-2 py-0 ring-offset-2 transition-colors duration-150 group-focus:ring',
+                'text-slate-100 hover:bg-white hover:text-orange-500 group-focus:ring-orange-500 group-focus:ring-offset-white dark:text-white dark:hover:bg-slate-800 dark:group-focus:ring-offset-slate-800',
                   item.isActive
                     ? 'font-semibold text-opacity-100 dark:text-opacity-100'
                     : 'font-medium text-opacity-70 dark:text-opacity-70',

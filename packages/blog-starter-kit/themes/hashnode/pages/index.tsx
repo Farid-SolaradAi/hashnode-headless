@@ -25,6 +25,9 @@ import FeaturedPosts from '../components/features-posts';
 import PublicationFooter from '../components/publication-footer';
 import PublicationMeta from '../components/publication-meta';
 import { resizeImage } from '../utils/image';
+import SolaradNavbar from '../components/solarad-navbar';
+import SolaradFooter from '../components/solarad-footer';
+import CallToAction from '../components/call-to-action';
 
 const REVALIDATION_INTERVAL_POST_VIEWS_ACTIVE = 60 * 60; // 1 hour
 const REVALIDATION_INTERVAL = 60 * 60 * 24 * 30; // 1 month
@@ -68,8 +71,8 @@ export default function Index(
 	const postsToBeRendered = {
 		edges: pinnedPost
 			? [{ node: pinnedPost, cursor: `${pinnedPost.id}_${pinnedPost.publishedAt}` }].concat(
-					posts.edges,
-			  )
+				posts.edges,
+			)
 			: posts.edges,
 		pageInfo: posts.pageInfo,
 	};
@@ -128,6 +131,7 @@ export default function Index(
 						}}
 					/>
 				</Head>
+				<SolaradNavbar />
 				<Header isHome={true} />
 				<div>
 					{postsToBeRendered.edges.length > 0 ? (
@@ -180,7 +184,7 @@ export default function Index(
 						/>
 					) : null}
 				</div>
-				{publication ? (
+				{/* {publication ? (
 					<PublicationFooter
 						authorName={publication.author.name}
 						title={publication.title}
@@ -190,7 +194,9 @@ export default function Index(
 						logo={publication.preferences.logo}
 						darkMode={publication.preferences.darkMode}
 					/>
-				) : null}
+				) : null} */}
+				<CallToAction />
+				<SolaradFooter />
 			</Layout>
 		</AppProvider>
 	);
