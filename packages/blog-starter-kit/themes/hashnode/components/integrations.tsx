@@ -61,10 +61,10 @@ export function Integrations() {
 
 	useEffect(() => {
 		// @ts-ignore
-		window.gtag('config', gaTrackingID, {
-			transport_url: 'https://ping.hashnode.com',
-			first_party_collection: true,
-		});
+		// window.gtag('config', gaTrackingID, {
+		// 	transport_url: 'https://ping.hashnode.com',
+		// 	first_party_collection: true,
+		// });
 	}, []);
 
 	return (

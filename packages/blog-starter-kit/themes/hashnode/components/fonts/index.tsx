@@ -1,4 +1,4 @@
-import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
+import { Inter, Plus_Jakarta_Sans, Raleway } from 'next/font/google';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -12,14 +12,21 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   display: 'swap',
 });
 
+const raleway = Raleway({
+  subsets: ['latin'],
+  variable: '--font-raleway',
+  display: 'swap',
+});
+
 const variableConstant = 'variable';
 // const fontInterVar = inter.variable.replace(variableConstant, 'Inter');
 // const fontPlusJakartaSansVar = plusJakartaSans.variable.replace(variableConstant, 'Plus_Jakarta_Sans');
+const fontRalewayVar = raleway.variable.replace(variableConstant, 'Raleway');
 
 export const GlobalFontVariables = () => (
   <style jsx global>{`
     html {
-
+      --font-raleway: ${fontRalewayVar};
     }
   `}</style>
 );

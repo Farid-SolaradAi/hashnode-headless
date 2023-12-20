@@ -5,7 +5,7 @@ const SolaradFooter: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black p-9" style={{ fontFamily: 'Raleway, sans-serif' }}>
+    <footer className="bg-black p-9">
       <div className="container mx-auto mt-9">
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-9 mb-9">

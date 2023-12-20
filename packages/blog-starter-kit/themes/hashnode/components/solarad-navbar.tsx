@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import SolaradLogo from './icons/solarad-flat.png'
+import { BarsSVG } from './icons';
 const SolaradNavbar: React.FC = () => {
     const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
     const [isResourcesDropdownOpen, setIsResourcesDropdownOpen] = useState(false);
@@ -16,7 +17,7 @@ const SolaradNavbar: React.FC = () => {
 
 
     return (
-        <nav className="sticky top-0 z-50 flex flex-row justify-between bg-black px-2 py-6" style={{ fontFamily: 'Raleway, sans-serif' }}>
+        <nav className="sticky top-0 z-50 flex flex-row justify-between bg-black sm:px-4 sm:pl-6 px-1 py-6">
             {isMenuOpen ? null : (
                 <Link href="https://solarad.ai" legacyBehavior>
                     <a className="flex items-center">
@@ -26,77 +27,77 @@ const SolaradNavbar: React.FC = () => {
             )}
             <div className="md:hidden relative z-10 flex items-center">
                 {isMenuOpen ? (
-                    <div className="overlay-dropdown">
-                        <div className="relative">
-                            <span className="text-white px-4 py-3 text-sm bg-black hover:bg-gray-100 hover:cursor-pointer" onClick={toggleMenu}>
+                    <div className="w-screen bg-white">
+                        <div className="flex justify-between items-center p-4">
+                            <Link href="https://solarad.ai" legacyBehavior>
+                                <a className="flex items-center">
+                                    <Image src={SolaradLogo} alt="Solarad Logo" width={120} height={50} layout="fixed" />
+                                </a>
+                            </Link>
+                            <span className="text-gray-500 cursor-pointer" onClick={() => { setIsMenuOpen(false) }}>
                                 X
                             </span>
                         </div>
 
-                        <div className="overlay-content flex flex-row">
+                        <div className="flex flex-col">
+                            <a
+                                className="px-6 py-3 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
+                                onClick={toggleProductsDropdown}
+                            >
+                                Products
+                            </a>
+                            {isProductsDropdownOpen && (
+                                <div className="flex flex-col pl-6">
+                                    <Link href="https://solarad.ai/forecast" legacyBehavior>
+                                        <a className="px-6 py-3 text-sm text-gray-700 hover:bg-gray-100">Forecast</a>
+                                    </Link>
+                                    <Link href="https://solarad.ai/coming-soon" legacyBehavior>
+                                        <a className="px-6 py-3 text-sm text-gray-700 hover:bg-gray-100">
+                                            Weather Intelligence Platform
+                                        </a>
+                                    </Link>
+                                    <Link href="https://solarad.ai/coming-soon" legacyBehavior>
+                                        <a className="px-6 py-3 text-sm text-gray-700 hover:bg-gray-100">
+                                            Weather APIs for Solar
+                                        </a>
+                                    </Link>
+                                    {/* Add more sub-items for Products here */}
+                                </div>
+                            )}
 
-                            <div className="relative">
-                                <a
-                                    className="block px-4 py-3 text-sm text-gray-700 bg-white hover:bg-gray-100 hover:cursor-pointer"
-                                    onClick={toggleProductsDropdown}
-                                >
-                                    Products
-                                </a>
-                                {isProductsDropdownOpen && (
-                                    <div className="absolute pt-2 w-48 left-4">
-                                        <div className="px-4 py-1 text-sm bg-white box-border rounded-t-md"></div>
-                                        <Link href="https://solarad.ai/forecast" legacyBehavior>
-                                            <a className="block px-4 py-3 text-sm text-gray-700 bg-white hover:bg-gray-100">Forecast</a>
-                                        </Link>
-                                        <Link href="https://solarad.ai/coming-soon" legacyBehavior>
-                                            <a className="block px-4 py-3 text-sm text-gray-700 bg-white hover:bg-gray-100">
-                                                Weather Intelligence Platform
-                                            </a>
-                                        </Link>
-                                        <Link href="https://solarad.ai/coming-soon" legacyBehavior>
-                                            <a className="block px-4 py-3 text-sm text-gray-700 bg-white hover:bg-gray-100 rounded-b-md">
-                                                Weather APIs for Solar
-                                            </a>
-                                        </Link>
-                                        {/* Add more sub-items for Products here */}
-                                    </div>
-                                )}
-                            </div>
                             <Link href="https://solarad.ai/pricing" legacyBehavior>
-                                <a className="block px-4 py-3 text-sm text-gray-700 bg-white hover:bg-gray-100 hover:cursor-pointer">Pricing</a>
+                                <a className="px-6 py-3 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Pricing</a>
                             </Link>
                             <Link href="https://solarad.ai/company" legacyBehavior>
-                                <a className="block px-4 py-3 text-sm text-gray-700 bg-white hover:bg-gray-100 hover:cursor-pointer">Company</a>
+                                <a className="px-6 py-3 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">Company</a>
                             </Link>
-                            <div className="relative">
-                                <a
-                                    className="block px-4 py-3 text-sm text-gray-700 bg-white hover:bg-gray-100 hover:cursor-pointer"
-                                    onClick={toggleResourcesDropdown}
-                                >
-                                    Resources
-                                </a>
-                                {isResourcesDropdownOpen && (
-                                    <div className="absolute pt-2 w-48 right-0">
-                                        <Link href="https://blog.solarad.ai" legacyBehavior>
-                                            <a className="block px-4 py-3 text-sm text-gray-700 bg-white hover:bg-gray-100">Blog</a>
-                                        </Link>
-                                        <Link href="https://blog.solarad.ai" legacyBehavior>
-                                            <a className="block px-4 py-3 text-sm text-gray-700 bg-white hover:bg-gray-100">Newsletter</a>
-                                        </Link>
-                                        <Link href="https://solarad.ai/resource-map" legacyBehavior>
-                                            <a className="block px-4 py-3 text-sm text-gray-700 bg-white hover:bg-gray-100 rounded-b-md">
-                                                Resource Map
-                                            </a>
-                                        </Link>
-                                    </div>
-                                )}
-                            </div>
-                            {/* Add more menu items as needed */}
+                            <a
+                                className="px-6 py-3 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
+                                onClick={toggleResourcesDropdown}
+                            >
+                                Resources
+                            </a>
+                            {isResourcesDropdownOpen && (
+                                <div className="flex flex-col pl-6">
+                                    <Link href="https://blog.solarad.ai" legacyBehavior>
+                                        <a className="px-6 py-3 text-sm text-gray-700 hover:bg-gray-100">Blog</a>
+                                    </Link>
+                                    <Link href="/newsletter" legacyBehavior>
+                                        <a className="px-6 py-3 text-sm text-gray-700 hover:bg-gray-100">Newsletter</a>
+                                    </Link>
+                                    <Link href="/resource-map" legacyBehavior>
+                                        <a className="px-6 py-3 text-sm text-gray-700 hover:bg-gray-100">
+                                            Resource Map
+                                        </a>
+                                    </Link>
+                                    {/* Add more sub-items for Resources here */}
+                                </div>
+                            )}
                         </div>
                     </div>
                 ) : (
                     <span className="text-white hover:text-gray-400 transition-colors hover:cursor-pointer" onClick={toggleMenu}>
-                        Menu
+                        <BarsSVG className="h-6 w-6 stroke-current" />
                     </span>
                 )}
             </div>

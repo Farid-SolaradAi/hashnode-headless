@@ -136,7 +136,8 @@ export default function Index(
 				</Head>
 				<SolaradNavbar />
 				<Header isHome={true} />
-				<div>
+				<div
+				>
 					{postsToBeRendered.edges.length > 0 ? (
 						<FeaturedPosts
 							posts={postsToBeRendered.edges.map((p: any) => p.node).slice(0, 3)}

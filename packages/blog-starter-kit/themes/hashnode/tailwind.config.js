@@ -5,6 +5,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 const fontInterVar = 'var(--font-inter)';
 const fontPlusJakartaVar = 'var(--font-plus-jakarta-sans)';
+const Raleway = 'var(--font-raleway)'
 
 module.exports = {
 	content: ['./components/**/*.tsx', './pages/**/*.tsx', './components/*.js'],
@@ -12,8 +13,8 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: [fontInterVar, ...defaultTheme.fontFamily.sans],
-				heading: [fontPlusJakartaVar, ...defaultTheme.fontFamily.sans],
+				sans: [Raleway, ...defaultTheme.fontFamily.sans],
+				heading: [Raleway, ...defaultTheme.fontFamily.sans],
 			},
 			colors: {
 				'accent-1': '#FAFAFA',

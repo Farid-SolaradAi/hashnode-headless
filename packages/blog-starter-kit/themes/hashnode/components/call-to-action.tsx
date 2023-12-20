@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const CallToAction = () => {
     return (
-        <section className="mt-5 bg-gradient-to-r from-[#fb6340] to-[#fbb140] py-10" style={{ background: "linear-gradient(35deg, #172b4d 0, #1a174d 100%)", fontFamily: 'Raleway, sans-serif' }} >
+        <section className="mt-5 bg-gradient-to-r from-[#fb6340] to-[#fbb140] py-10" style={{ background: "linear-gradient(35deg, #172b4d 0, #1a174d 100%)" }} >
             <div className="container mx-auto px-4 mt-5 mb-5">
                 <div className="flex justify-center mb-9">
                     <h2 className="text-white font-bold text-center text-3xl">

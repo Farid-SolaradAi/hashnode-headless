@@ -128,7 +128,7 @@ export default function PostOrPage({ publication, post, page, morePosts }: Props
 						ref={headerRef}
 						className={twJoin(
 							'blog-header',
-							'z-50 w-full border-b',
+							'z-40 w-full border-b',
 							navPositionStyles,
 							'border-black/10 bg-white bg-opacity-70 dark:border-white/10 dark:bg-slate-900 dark:bg-opacity-70'
 						)}
