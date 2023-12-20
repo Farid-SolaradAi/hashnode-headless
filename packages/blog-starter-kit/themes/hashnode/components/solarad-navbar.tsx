@@ -140,7 +140,7 @@ const SolaradNavbar: React.FC = () => {
                             <Link href="https://blog.solarad.ai" legacyBehavior>
                                 <a className="block px-4 py-3 text-sm text-gray-700 bg-white hover:bg-gray-100">Blog</a>
                             </Link>
-                            <Link href="https://blog.solarad.ai/newsletter" legacyBehavior>
+                            <Link href="https://blog.solarad.ai/series/the-renewable-leader" legacyBehavior>
                                 <a className="block px-4 py-3 text-sm text-gray-700 bg-white hover:bg-gray-100">Newsletter</a>
                             </Link>
                             <Link href="https://solarad.ai/resource-map" legacyBehavior>
