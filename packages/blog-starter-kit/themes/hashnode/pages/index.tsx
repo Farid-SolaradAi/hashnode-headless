@@ -34,6 +34,7 @@ import PublicationSubscribeStandOut from '../components/publication-subscribe-st
 const REVALIDATION_INTERVAL_POST_VIEWS_ACTIVE = 60 * 60; // 1 hour
 const REVALIDATION_INTERVAL = 60 * 60 * 24 * 30; // 1 month
 
+//abc
 const NoPostsImage = ({ alt = '' }) => {
 	return (
 		<Image
